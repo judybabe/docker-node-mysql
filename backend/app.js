@@ -5,10 +5,10 @@ const port = 3000;
 
 // 設定資料庫連線（主機用 mysql --> 等下Compose會自動解析）
 const db = mysql.createConnection({
-  host: 'mysql',       // 這邊填 "mysql"（service 名稱）
-  user: 'root',
-  password: 'password',
-  database: 'testdb'
+  host: 'process.env.DB_HOST',       // 這邊填 "mysql"（service 名稱）
+  user: 'process.env.DB_USER',
+  password: 'process.env.DB_PASSWORD',
+  database: 'process.env.DB_NAME'
 });
 
 // 測試資料庫連線
